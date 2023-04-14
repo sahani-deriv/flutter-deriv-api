@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_single_quotes, unnecessary_import, unused_import
+// ignore_for_file: prefer_single_quotes, unnecessary_import, unused_import, sort_constructors_first, public_member_api_docs
 
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter_deriv_api/api/exceptions/exceptions.dart';
 import 'package:flutter_deriv_api/api/models/base_exception_model.dart';
@@ -604,6 +605,10 @@ class ProposalOpenContract extends ProposalOpenContractModel {
           validationError: validationError,
         );
 
+  static Future<ProposalOpenContract> parseJsoninIsolate(
+          Map<String, dynamic> json) async =>
+      compute(ProposalOpenContract.fromJson, json);
+
   /// Creates an instance from JSON.
   factory ProposalOpenContract.fromJson(Map<String, dynamic> json) =>
       ProposalOpenContract(
@@ -964,6 +969,10 @@ class AuditDetails extends AuditDetailsModel {
                 ),
               ),
       );
+
+  static Future<AuditDetails> parseJsonInIsolate(
+          Map<String, dynamic> json) async =>
+      compute(AuditDetails.fromJson, json);
 
   /// Converts an instance to JSON.
   Map<String, dynamic> toJson() {
