@@ -21,10 +21,10 @@ jobs:
       - name: 📚 Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
-      - name: 📚 Git Checkout in injector
+      - name: 📚 Git Checkout to deriv-com/deriv-dependency-injector
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
-          repository: sahani-deriv/deriv-dependency-injector
+          repository: deriv-com/deriv-dependency-injector
 
       - name: 🐦 Setup Flutter
         uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa
@@ -52,5 +52,5 @@ jobs:
         run: flutter test
 
       - name: Build Example app
-        working-directory: ./example
+        working-directory: example
         run: flutter build apk --target-platform android-arm
