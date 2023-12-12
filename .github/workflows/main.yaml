@@ -31,9 +31,13 @@ jobs:
         with:
           flutter-version: "3.10.2"
           channel: stable
+          cache: true
+          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
 
       - name: 📦 Install Dependencies
         run: flutter pub get
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ✨ Check Formatting
         run: dart format --set-exit-if-changed .
