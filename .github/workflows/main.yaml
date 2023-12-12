@@ -18,13 +18,13 @@ jobs:
   build:
     runs-on: "ubuntu-latest"
     steps:
-      - name: 📚 Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-
       - name: 📚 Git Checkout to deriv-com/deriv-dependency-injector
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           repository: deriv-com/deriv-dependency-injector
+
+      - name: 📚 Git Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: 🐦 Setup Flutter
         uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa
